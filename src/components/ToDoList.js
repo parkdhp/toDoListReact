@@ -6,7 +6,7 @@ let ToDoList = (props) => {
     <div>
       {
         props.todos.map((todo, i) => 
-          <ToDoListEntry key={i} todo={todo}/>
+          <ToDoListEntry key={i} index={i} todo={todo} onclick={props.onclick}/>
         )
       }
     </div>

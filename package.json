@@ -12,12 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-<<<<<<< HEAD
   },
   "repository": {
     "type" : "git",
     "url" : "https://github.com/parkdhp/todolistreact"
-=======
->>>>>>> 92b44be689064fb3d45a8ceccec825b6a2a1d6d0
   }
 }

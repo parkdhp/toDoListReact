@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import '../styles/App.css';
 import '../data/todoData';
 import ToDoList from '../components/ToDoList';
@@ -9,37 +8,51 @@ class App extends Component {
     super(props);
     this.state = {
       todos: window.dummyTodos,
+      input: '',
+    }
+    this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleOnSubmit = this.handleOnSubmit.bind(this);
+  }
+  handleOnClick(index) {
+    let copy = this.state.todos.slice();
+    copy.splice(index, 1);
+    this.setState({
+      todos: copy,
+    })
+  }
+  handleChange(e) {
+    this.setState({
+      input: e.target.value,
+    })
+  }
+  handleOnSubmit() {
+    if (this.state.input !== ''){
+      let newTodo = {
+        text: this.state.input,
+        status: false,
+      }
+      let copy = this.state.todos.slice();
+      copy.push(newTodo);
+      this.setState({
+        todos: copy,
+      })
     }
   }
-=======
-import logo from '../img/logo.svg';
-import '../styles/App.css';
-
-class App extends Component {
->>>>>>> 92b44be689064fb3d45a8ceccec825b6a2a1d6d0
   render() {
     return (
       <div className="App">
         <header>
-<<<<<<< HEAD
           <h1>To Do List</h1>
         </header>
+        <input type="text" onChange={this.handleChange}/>
+        <button onClick={this.handleOnSubmit}>Submit</button>
         <ul>
-          <ToDoList todos={this.state.todos}/>
-=======
-          <h1>Hello</h1>
-        </header>
-        <ul>
-          <li></li>
->>>>>>> 92b44be689064fb3d45a8ceccec825b6a2a1d6d0
+          <ToDoList todos={this.state.todos} onclick={this.handleOnClick}/>
         </ul>
       </div>
     );
   }
 }
 
-<<<<<<< HEAD
 export default App;
-=======
-export default App;
->>>>>>> 92b44be689064fb3d45a8ceccec825b6a2a1d6d0
